@@ -18,19 +18,19 @@ const sections = [
   {
     id: "donate",
     title: "How You Can Help",
-    bg: "https://images.pexels.com/photos/2571190/pexels-photo-2571190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    bg: "https://images.pexels.com/photos/28102998/pexels-photo-28102998/free-photo-of-dog-on-a-rocky-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     content: "Your contribution helps rescue, feed, and rehabilitate stray dogs. Every rupee makes a difference.",
   },
   {
     id: "stories",
     title: "Success Stories",
-    bg: "https://images.pexels.com/photos/2571190/pexels-photo-2571190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    bg: "https://images.pexels.com/photos/31250829/pexels-photo-31250829/free-photo-of-lonely-stray-dog-resting-on-sidewalk.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     content: "Meet the dogs who found loving homes thanks to your support!",
   },
   {
     id: "contact",
     title: "Get Involved",
-    bg: "https://images.pexels.com/photos/2571190/pexels-photo-2571190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    bg: "https://images.pexels.com/photos/19868624/pexels-photo-19868624/free-photo-of-white-puppy-behind-fence.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     content: "Adopt, foster, or volunteer. There are many ways to help these innocent lives.",
   },
 ];
