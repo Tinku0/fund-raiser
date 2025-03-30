@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import "./App.css";
+import { FaPaw, FaBars, FaTimes } from "react-icons/fa";
 
 const sections = [
   {
     id: "home",
-    title: "Help Stray Dogs Find a Home",
+    title: "Help",
     bg: "https://images.pexels.com/photos/8078361/pexels-photo-8078361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     content: "Every dog deserves love and shelter. Join us in making a difference!",
   },
@@ -37,6 +38,7 @@ const sections = [
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleNavClick = (id) => {
     setActiveSection(id);
@@ -45,17 +47,55 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {/* Navbar */}
-      <nav className="navbar">
-        {sections.map((section) => (
-          <button
-            key={section.id}
-            className={`nav-button ${activeSection === section.id ? "active" : ""}`}
-            onClick={() => handleNavClick(section.id)}
-          >
-            {section.title}
-          </button>
-        ))}
+
+      <nav className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md shadow-lg z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-3">
+        {/* Logo */}
+        <div className="flex items-center text-white text-2xl font-bold cursor-pointer">
+          <FaPaw className="text-yellow-400 mr-2" />
+          <span className="italic tracking-wide">Stray Rescue</span>
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-6">
+          {sections.map((section) => (
+            <button
+              key={section.id}
+              className={`nav-button transition ${
+                activeSection === section.id ? "text-yellow-400" : "text-white"
+              }`}
+              onClick={() => handleNavClick(section.id)}
+            >
+              {section.title}
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button className="md:hidden text-white text-2xl" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden absolute top-16 left-0 w-full bg-black/90 py-4">
+          {sections.map((section) => (
+            <button
+              key={section.id}
+              className={`block w-full text-left px-6 py-3 hover:bg-yellow-500/20 transition ${
+                activeSection === section.id ? "text-yellow-400" : "text-white"
+              }`}
+              onClick={() => {
+                handleNavClick(section.id);
+                setIsOpen(false);
+              }}
+            >
+              {section.title}
+            </button>
+          ))}
+        </div>
+      )}
       </nav>
 
       {/* Sections */}

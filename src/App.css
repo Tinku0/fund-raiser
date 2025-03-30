@@ -1,8 +1,5 @@
 /* Global Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -33,9 +30,8 @@ body {
 .nav-button {
   background: transparent;
   border: none;
-  color: white;
   font-size: 16px;
-  padding: 10px 20px;
+  padding: 5px 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -43,8 +39,6 @@ body {
 .nav-button.active,
 .nav-button:hover {
   color: #ffcc00;
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 /* Sections */
@@ -77,28 +71,32 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* Donate Buttons */
 .donate-buttons {
-  margin-top: 20px;
   display: flex;
-  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .donate-btn {
-  background: #ffcc00;
-  color: black;
-  border: none;
-  padding: 12px 25px;
-  font-size: 18px;
-  font-weight: bold;
+  background-color: #facc15; /* Yellow */
+  color: #000;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 5px;
+  transition: transform 0.2s, background 0.3s;
 }
 
 .donate-btn:hover {
-  background: #ffa500;
-  transform: scale(1.1);
+  background-color: #eab308; /* Darker Yellow */
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .donate-buttons {
+    flex-direction: row; /* Buttons inline for larger screens */
+  }
 }
 
 /* Footer */
